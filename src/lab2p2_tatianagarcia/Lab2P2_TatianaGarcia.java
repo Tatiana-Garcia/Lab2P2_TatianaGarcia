@@ -33,32 +33,137 @@ public class Lab2P2_TatianaGarcia {
                             + "5. Comprar Casas/Edificios/Solares\n"
                             + "6. Regresar al Menu Principal");
                     opcion2 = leer.nextInt();
-                }
-                if (opcion2 ==1) {
-                    int op = 0; 
-                    System.out.println("Que desea crear\n"
-                            + "1. Casa \n"
-                            + "2. Edificos \n"
-                            + "3. Solares");
-                    op = leer.nextInt();
-                    switch (op) {
-                        case 1:
-                            lista.add(CrearCasa());
-                            break;
-                        case 2: 
-                            lista.add(CrearEdificio());
-                            break; 
-                        case 3:
-                            
-                            break; 
-                        default:
-                            throw new AssertionError();
+                    if (opcion2 ==1) {
+                        int op = 0; 
+                        System.out.println("Que desea crear\n"
+                                + "1. Casa \n"
+                                + "2. Edificos \n"
+                                + "3. Solares");
+                        op = leer.nextInt();
+                        switch (op) {
+                            case 1:
+                                lista.add(CrearCasa());
+                                break;
+                            case 2: 
+                                lista.add(CrearEdificio());
+                                break; 
+                            case 3:
+                                lista.add(CrearSolar());
+                                break; 
+                            default:
+                                throw new AssertionError();
+                        }   
+                    }
+                    if (opcion2 ==2) {
+                        String s=""; 
+                        for (Object t : lista) {
+                           s += "\nPosicion: "+lista.indexOf(t)+"\n"+t+"\n"; 
+                        }
+                        System.out.println(s);
+                    }
+                    if (opcion2 ==3){
+                        int pos ;
+                        int op =5; 
+                        while(op >3){
+                            System.out.println("Que desea modificar: \n"
+                                    + "1. Casas\n"
+                                    + "2. Edificios\n"
+                                    + "3. Solares");
+                            op = leer.nextInt();
+                            if (op ==1) {
+                                System.out.println("Ingresa la posicion de la Casa que desea modificar: ");
+                                pos = leer.nextInt();
+                                if(pos>=0 && pos<lista.size()){// & solo cuando es falso no evalua el resto, con && cuando es falso evalua el resto de condiciones
+                                    if(lista.get(pos) instanceof Casa ){
+                                        System.out.println(lista.get(pos)+"\n");
+                                        lista.remove(pos);
+                                        lista.add(CrearCasa());
+                                    }else{
+                                        System.out.println( "La posicion entregada no es valida");
+                                    }
+                                } 
+                            }
+                            if (op ==2) {
+                                System.out.println("Ingresa la posicion del Edificio que desea modificar: ");
+                                pos = leer.nextInt();
+                                if(pos>=0 && pos<lista.size()){// & solo cuando es falso no evalua el resto, con && cuando es falso evalua el resto de condiciones
+                                    if(lista.get(pos) instanceof Edificio ){
+                                        System.out.println(lista.get(pos)+"\n");
+                                        lista.remove(pos);
+                                        lista.add(CrearEdificio());
+                                    }else{
+                                        System.out.println( "La posicion entregada no es valida");
+                                    }
+                                } 
+                            }
+                            if (op ==3) {
+                                System.out.println("Ingresa la posicion del Solar que desea modificar: ");
+                                pos = leer.nextInt();
+                                if(pos>=0 && pos<lista.size()){// & solo cuando es falso no evalua el resto, con && cuando es falso evalua el resto de condiciones
+                                    if(lista.get(pos) instanceof Solares ){
+                                        System.out.println(lista.get(pos)+"\n");
+                                        lista.remove(pos);
+                                        lista.add(CrearSolar());
+                                    }else{
+                                        System.out.println( "La posicion entregada no es valida");
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                    if (opcion2 == 4) {
+                        int pos ;
+                        int op =5; 
+                        while(op >3){
+                            System.out.println("Que desea borrar: \n"
+                                    + "1. Casas\n"
+                                    + "2. Edificios\n"
+                                    + "3. Solares");
+                            op = leer.nextInt();
+                            if (op ==1) {
+                                System.out.println("Ingresa la posicion de la Casa que desea borrar: ");
+                                pos = leer.nextInt();
+                                if(pos>=0 && pos<lista.size()){
+                                    if(lista.get(pos) instanceof Casa ){
+                                        lista.remove(pos);
+                                        System.out.println("Casa eliminada correctamente");
+                                    }else{
+                                        System.out.println( "La posicion entregada no es valida");
+                                    }
+                                } 
+                            }
+                            if (op ==2) {
+                                System.out.println("Ingresa la posicion del Edificio que desea borrar: ");
+                                pos = leer.nextInt();
+                                if(pos>=0 && pos<lista.size()){
+                                    if(lista.get(pos) instanceof Edificio ){
+                                        lista.remove(pos);
+                                        System.out.println("Edificio eliminada correctamente");
+                                    }else{
+                                        System.out.println( "La posicion entregada no es valida");
+                                    }
+                                } 
+                            }
+                            if (op ==3) {
+                                System.out.println("Ingresa la posicion del Solar que desea borrar: ");
+                                pos = leer.nextInt();
+                                if(pos>=0 && pos<lista.size()){
+                                    if(lista.get(pos) instanceof Solares ){
+                                        lista.remove(pos);
+                                        System.out.println("Casa eliminada correctamente");
+                                    }else{
+                                        System.out.println( "La posicion entregada no es valida");
+                                    }
+                                }
+                            }
+                        }
                     }
                     
+                }//Fin del while menu registro
+                
                     
-                }
-                    
-            }
+            }//Fin de la opcion 1 menu principal
             if (opcion ==2) {
                 
             }
@@ -113,6 +218,7 @@ public class Lab2P2_TatianaGarcia {
         cant_locales = leer.nextInt();
         System.out.println("Ingrese la direccion de referencia: ");
         direccion = leer.nextLine();
+        leer.nextLine();
         
         retorno = new Edificio(num_pisos, cant_locales, direccion);
         return retorno;

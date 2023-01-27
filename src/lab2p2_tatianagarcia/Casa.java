@@ -100,8 +100,8 @@ public class Casa {
                 +"\nNumero de Bloque: "+num_bloque
                 +"\nColor: "+color
                 +"\nLargo "+largo
-                +"y ancho: "+ancho
-                +"\n Numero de Baños: "+num_baños
-                +"\n Numero de Cuartos: "+ num_cuartos;
+                +" y ancho: "+ancho
+                +"\nNumero de Baños: "+num_baños
+                +"\nNumero de Cuartos: "+ num_cuartos;
     }
 }
