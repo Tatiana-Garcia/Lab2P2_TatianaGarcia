@@ -14,6 +14,7 @@ public class Casa {
     private int largo, ancho;
     private int num_baños; 
     private int num_cuartos; 
+    private String estado; 
 
     public Casa (){
     }

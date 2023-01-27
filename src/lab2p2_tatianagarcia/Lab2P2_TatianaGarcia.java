@@ -59,7 +59,9 @@ public class Lab2P2_TatianaGarcia {
                         for (Object t : lista) {
                            s += "\nPosicion: "+lista.indexOf(t)+"\n"+t+"\n"; 
                         }
-                        System.out.println(s);
+                        System.out.println(s.toString());
+                        System.out.println("kjhgfcx");
+                        
                     }
                     if (opcion2 ==3){
                         int pos ;
@@ -158,7 +160,51 @@ public class Lab2P2_TatianaGarcia {
                                 }
                             }
                         }
-                    }
+                    }//Fin del opcion 4
+                    if (opcion2==5) {
+                        int pos ;
+                        int op =5; 
+                        while(op >3){
+                            System.out.println("Que desea comprar: \n"
+                                    + "1. Casas\n"
+                                    + "2. Edificios\n"
+                                    + "3. Solares");
+                            op = leer.nextInt();
+                            if (op ==1) {
+                                System.out.println("Ingresa la posicion de la Casa que desea comprar: ");
+                                pos = leer.nextInt();
+                                if(pos>=0 && pos<lista.size()){
+                                    if(lista.get(pos) instanceof Casa ){
+                                        ///
+                                    }else{
+                                        System.out.println( "La posicion entregada no es valida");
+                                    }
+                                } 
+                            }
+                            if (op ==2) {
+                                System.out.println("Ingresa la posicion del Edificio que desea comprar: ");
+                                pos = leer.nextInt();
+                                if(pos>=0 && pos<lista.size()){
+                                    if(lista.get(pos) instanceof Edificio ){
+                                        //
+                                    }else{
+                                        System.out.println( "La posicion entregada no es valida");
+                                    }
+                                } 
+                            }
+                            if (op ==3) {
+                                System.out.println("Ingresa la posicion del Solar que desea comprar: ");
+                                pos = leer.nextInt();
+                                if(pos>=0 && pos<lista.size()){
+                                    if(lista.get(pos) instanceof Solares ){
+                                        //
+                                    }else{
+                                        System.out.println( "La posicion entregada no es valida");
+                                    }
+                                }
+                            }
+                        }//while
+                    }//fin de opcion5
                     
                 }//Fin del while menu registro
                 
@@ -168,6 +214,27 @@ public class Lab2P2_TatianaGarcia {
                 
             }
             if (opcion == 3) {
+                ArrayList<Usuario> users = new ArrayList();
+                int op =3; 
+                while(op>2){
+                    System.out.println("Deseas: \n"
+                            + "1. Sign Up \n"
+                            + "2. Log In");
+                    op = leer.nextInt();
+                    if (op==1) {
+                        users.add(User());      
+                    }
+                    if (op ==2) {
+                        System.out.println("Ingrese su usuario: ");
+                        String user; 
+                        user = leer.next();
+                        System.out.println("Ingrese su contraseña: ");
+                        String contra; 
+                        contra = leer.next(); 
+                    }
+                }
+                
+                
                 
             }
             if (opcion == 4) {
@@ -175,6 +242,24 @@ public class Lab2P2_TatianaGarcia {
             }
         }//fin del menu principal 
     }//Fin del main
+    
+    static Usuario User(){
+        Usuario retorno;
+        System.out.println("Ingrese su nombre: ");
+        String nombre; 
+        leer = new Scanner(System.in);
+        nombre = leer.nextLine(); 
+        System.out.println("Ingrese su edad: ");
+        int edad = leer.nextInt(); 
+        System.out.println("Ingrese el usuario a crear: ");
+        String user; 
+        user = leer.next();
+        System.out.println("Ingrese una contraseña: ");
+        String contra; 
+        contra = leer.next();
+        retorno = new Usuario(user, contra, nombre, edad);
+        return retorno; 
+    }
     static Casa CrearCasa(){
          
         Color c; 
@@ -217,8 +302,9 @@ public class Lab2P2_TatianaGarcia {
         System.out.println("Ingrese la cantidad de locales: ");
         cant_locales = leer.nextInt();
         System.out.println("Ingrese la direccion de referencia: ");
+        leer = new Scanner(System.in);
         direccion = leer.nextLine();
-        leer.nextLine();
+        //leer.nextLine();
         
         retorno = new Edificio(num_pisos, cant_locales, direccion);
         return retorno;

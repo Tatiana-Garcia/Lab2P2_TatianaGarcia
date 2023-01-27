@@ -8,6 +8,7 @@ public class Edificio {
     private int num_pisos; 
     private int cant_locales; 
     private String direccion; 
+    private String estado; 
     
     public Edificio(){
         
@@ -42,10 +43,15 @@ public class Edificio {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    public String toString(){
-        return "Edificio: \nNumero de Pisos: "+num_pisos
-                +"\nCantidad de locales: "+cant_locales
-                +"\nDireccion por referencia: "+direccion;
+
+    @Override
+    public String toString() {
+        return "Edificio:\nNumero de Pisos: " + num_pisos 
+                + "\nCantidad de locales: " + cant_locales 
+                + "\nDireccion por referencia: " + direccion;
     }
+    
+    
+    
     
 }
