@@ -126,7 +126,9 @@ public class Casa {
                 +" y ancho: "+ancho
                 +"\nNumero de Baños: "+num_baños
                 +"\nNumero de Cuartos: "+ num_cuartos
-                +"\n Estado: "+estado;
+                +"\nEstado: "+estado
+                +"\nDueño: "+dueño;
+        
     }
     
     

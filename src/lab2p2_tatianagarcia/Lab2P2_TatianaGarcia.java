@@ -225,7 +225,7 @@ public class Lab2P2_TatianaGarcia {
                 int pos; 
                 while(op>2){
                     System.out.println("Que estado desea modificar : \n"
-                            + "1. Casa"
+                            + "1. Casa\n"
                             + "2. Edificio");
                     op = leer.nextInt();
                     if (op ==1) {
@@ -235,22 +235,22 @@ public class Lab2P2_TatianaGarcia {
                             if(lista.get(pos) instanceof Casa ){
                                 Casa c = new Casa();
                                 System.out.println("A que estado desea modificar: \n"
-                                        + "1. Lista"
-                                        + "2. En Construccion"
-                                        + "3. Construccion en Espera"
+                                        + "1. Lista\n"
+                                        + "2. En Construccion\n"
+                                        + "3. Construccion en Espera\n"
                                         + "4. En Espera de Demolicion");
                                 int opc = leer.nextInt();
                                 if (opc ==1) {
-                                    c.setEstado("Lista");
+                                    ((Casa) lista.get(pos)).setEstado("Lista");
                                 }
                                 if(opc ==2){
-                                    c.setEstado("En Construccion");
+                                    ((Casa) lista.get(pos)).setEstado("En Construccion");
                                 }
                                 if(opc ==3){
-                                    c.setEstado("Construccion en Espera");
+                                    ((Casa) lista.get(pos)).setEstado("Construccion en Espera");
                                 }
                                 if(opc ==4){
-                                    c.setEstado("En Espera de Demolicion");
+                                    ((Casa) lista.get(pos)).setEstado("En Espera de Demolicion");
                                 }
                             }
                             else{
@@ -318,9 +318,11 @@ public class Lab2P2_TatianaGarcia {
                             if(t.getUsuario().equals(user)&&t.getPassword().equals(contra)){
                                 t.setUsuario(user);
                                 t.setPassword(contra);
+                                System.out.println("Inicio de secion exitosa");
+                                
                             }
                             else{
-                                System.out.println("Usuario no registrado");
+                                //System.out.println("Usuario no registrado");
                             }
                         }
                     }

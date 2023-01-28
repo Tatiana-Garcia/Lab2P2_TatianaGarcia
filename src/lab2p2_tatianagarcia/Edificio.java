@@ -67,7 +67,8 @@ public class Edificio {
         return "Edificio:\nNumero de Pisos: " + num_pisos 
                 + "\nCantidad de locales: " + cant_locales 
                 + "\nDireccion por referencia: " + direccion
-                + "\n Estado: "+estado;
+                + "\nEstado: "+estado
+                +"\nDueño: "+dueño;
     }
 
     
