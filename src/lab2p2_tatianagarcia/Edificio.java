@@ -8,7 +8,7 @@ public class Edificio {
     private int num_pisos; 
     private int cant_locales; 
     private String direccion; 
-    private String estado; 
+    private String dueño; 
     
     public Edificio(){
         
@@ -18,7 +18,7 @@ public class Edificio {
         cant_locales = cantidad_locales; 
         this.direccion= direccion;
     }
-
+    
     
     public int getNum_pisos() {
         return num_pisos;
@@ -43,6 +43,14 @@ public class Edificio {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+    
+    public String getDueño() {
+        return dueño;
+    }
+
+    public void setDueño(String dueño) {
+        this.dueño = dueño;
+    }
 
     @Override
     public String toString() {
@@ -50,6 +58,8 @@ public class Edificio {
                 + "\nCantidad de locales: " + cant_locales 
                 + "\nDireccion por referencia: " + direccion;
     }
+
+    
     
     
     

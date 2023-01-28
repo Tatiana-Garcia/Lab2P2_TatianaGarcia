@@ -13,6 +13,8 @@ public class Lab2P2_TatianaGarcia {
         
         int opcion = 0; 
         ArrayList lista = new ArrayList();
+        ArrayList<Usuario> users = new ArrayList();
+        
         
         while (opcion != 4) {   
             System.out.println("--MENU--\n"
@@ -59,8 +61,7 @@ public class Lab2P2_TatianaGarcia {
                         for (Object t : lista) {
                            s += "\nPosicion: "+lista.indexOf(t)+"\n"+t+"\n"; 
                         }
-                        System.out.println(s.toString());
-                        System.out.println("kjhgfcx");
+                        System.out.println(s);
                         
                     }
                     if (opcion2 ==3){
@@ -162,6 +163,7 @@ public class Lab2P2_TatianaGarcia {
                         }
                     }//Fin del opcion 4
                     if (opcion2==5) {
+                        Usuario u = new Usuario();
                         int pos ;
                         int op =5; 
                         while(op >3){
@@ -175,8 +177,9 @@ public class Lab2P2_TatianaGarcia {
                                 pos = leer.nextInt();
                                 if(pos>=0 && pos<lista.size()){
                                     if(lista.get(pos) instanceof Casa ){
-                                        ///
-                                    }else{
+                                        ((Casa) lista.get(pos)).setDueño(u.getUsuario());
+                                    }
+                                    else{
                                         System.out.println( "La posicion entregada no es valida");
                                     }
                                 } 
@@ -186,7 +189,7 @@ public class Lab2P2_TatianaGarcia {
                                 pos = leer.nextInt();
                                 if(pos>=0 && pos<lista.size()){
                                     if(lista.get(pos) instanceof Edificio ){
-                                        //
+                                        ((Edificio) lista.get(pos)).setDueño(u.getUsuario());
                                     }else{
                                         System.out.println( "La posicion entregada no es valida");
                                     }
@@ -197,13 +200,14 @@ public class Lab2P2_TatianaGarcia {
                                 pos = leer.nextInt();
                                 if(pos>=0 && pos<lista.size()){
                                     if(lista.get(pos) instanceof Solares ){
-                                        //
+                                        ((Solares) lista.get(pos)).setDueño(u.getUsuario());
                                     }else{
                                         System.out.println( "La posicion entregada no es valida");
                                     }
                                 }
                             }
                         }//while
+                        
                     }//fin de opcion5
                     
                 }//Fin del while menu registro
@@ -214,12 +218,12 @@ public class Lab2P2_TatianaGarcia {
                 
             }
             if (opcion == 3) {
-                ArrayList<Usuario> users = new ArrayList();
+                
                 int op =3; 
                 while(op>2){
                     System.out.println("Deseas: \n"
                             + "1. Sign Up \n"
-                            + "2. Log In");
+                            + "2. Log In\n");
                     op = leer.nextInt();
                     if (op==1) {
                         users.add(User());      
@@ -231,6 +235,16 @@ public class Lab2P2_TatianaGarcia {
                         System.out.println("Ingrese su contraseña: ");
                         String contra; 
                         contra = leer.next(); 
+                        
+                        for (Usuario t : users) {
+                            if(t.getUsuario().equals(user)&&t.getPassword().equals(contra)){
+                                t.setUsuario(user);
+                                t.setPassword(contra);
+                            }
+                            else{
+                                System.out.println("Usuario no registrado");
+                            }
+                        }
                     }
                 }
                 

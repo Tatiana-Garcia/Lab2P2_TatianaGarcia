@@ -14,7 +14,7 @@ public class Casa {
     private int largo, ancho;
     private int num_baños; 
     private int num_cuartos; 
-    private String estado; 
+    private String dueño; 
 
     public Casa (){
     }
@@ -94,6 +94,13 @@ public class Casa {
     
     public void setNum_cuartos(int num_cuartos) {
         this.num_cuartos = num_cuartos;
+    }
+    public String getDueño() {
+        return dueño;
+    }
+
+    public void setDueño(String dueño) {
+        this.dueño = dueño;
     }
     
     public String toString(){
