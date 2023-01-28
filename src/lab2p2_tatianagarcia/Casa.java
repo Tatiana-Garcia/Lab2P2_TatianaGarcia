@@ -15,6 +15,8 @@ public class Casa {
     private int num_baños; 
     private int num_cuartos; 
     private String dueño; 
+    private String[]estados = {"En construccion", "Lista", "Construccion en Espera", "En espera de Demolicion"};
+    private String estado;
 
     public Casa (){
     }
@@ -26,6 +28,8 @@ public class Casa {
         this.ancho = ancho; 
         num_baños = numero_baños; 
         num_cuartos = numero_cuartos; 
+        estado = estados[0];
+        
     }
     
     public int getNum_casa() {
@@ -110,6 +114,7 @@ public class Casa {
                 +"\nLargo "+largo
                 +" y ancho: "+ancho
                 +"\nNumero de Baños: "+num_baños
-                +"\nNumero de Cuartos: "+ num_cuartos;
+                +"\nNumero de Cuartos: "+ num_cuartos
+                +"\n Estado: "+estado;
     }
 }

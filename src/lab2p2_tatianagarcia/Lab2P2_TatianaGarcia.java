@@ -61,6 +61,7 @@ public class Lab2P2_TatianaGarcia {
                         for (Object t : lista) {
                            s += "\nPosicion: "+lista.indexOf(t)+"\n"+t+"\n"; 
                         }
+                        
                         System.out.println(s);
                         
                     }
@@ -215,7 +216,51 @@ public class Lab2P2_TatianaGarcia {
                     
             }//Fin de la opcion 1 menu principal
             if (opcion ==2) {
+                String s=""; 
+                for (Object t : lista) {
+                   s += "\nPosicion: "+lista.indexOf(t)+"\n"+t+"\n"; 
+                }
+                System.out.println(s);
+                int op = 3; 
+                int pos; 
+                while(op>2){
+                    System.out.println("Que estado desea modificar : \n"
+                            + "1. Casa"
+                            + "2. Edificio");
+                    op = leer.nextInt();
+                    if (op ==1) {
+                        System.out.println("Ingresa la posicion de la Casa que desea modificar: ");
+                        pos = leer.nextInt();
+                        if(pos>=0 && pos<lista.size()){
+                            if(lista.get(pos) instanceof Casa ){
+                                System.out.println("A que estado desea modificar: \n"
+                                        + "1. Lista"
+                                        + "2. En COnstruccion"
+                                        + "3. Construccion en Espera"
+                                        + "4. En Espera de Demolicion");
+                                //((Casa) lista.get(pos)).setDueño(u.getUsuario());
+                            }
+                            else{
+                                System.out.println( "La posicion entregada no es valida");
+                            }
+                        } 
+                    }
+                    if (op ==2) {
+                        System.out.println("Ingresa la posicion del Edificio que desea comprar: ");
+                        pos = leer.nextInt();
+                        if(pos>=0 && pos<lista.size()){
+                            if(lista.get(pos) instanceof Edificio ){
+                                //((Edificio) lista.get(pos)).setDueño(u.getUsuario());
+                            }else{
+                                System.out.println( "La posicion entregada no es valida");
+                            }
+                        } 
+                    }
+                }
                 
+                
+                
+
             }
             if (opcion == 3) {
                 

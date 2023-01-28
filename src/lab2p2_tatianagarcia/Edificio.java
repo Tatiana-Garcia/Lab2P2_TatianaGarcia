@@ -9,6 +9,8 @@ public class Edificio {
     private int cant_locales; 
     private String direccion; 
     private String dueño; 
+    private String[]estados = {"En construccion", "Lista", "Construccion en Espera", "En espera de Demolicion"};
+    private String estado;
     
     public Edificio(){
         
@@ -17,6 +19,7 @@ public class Edificio {
         num_pisos = numero_pisos; 
         cant_locales = cantidad_locales; 
         this.direccion= direccion;
+        estado = estados[0];
     }
     
     
@@ -56,7 +59,8 @@ public class Edificio {
     public String toString() {
         return "Edificio:\nNumero de Pisos: " + num_pisos 
                 + "\nCantidad de locales: " + cant_locales 
-                + "\nDireccion por referencia: " + direccion;
+                + "\nDireccion por referencia: " + direccion
+                + "\n Estado: "+estado;
     }
 
     
