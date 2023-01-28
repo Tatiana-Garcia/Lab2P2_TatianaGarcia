@@ -4,6 +4,7 @@ package lab2p2_tatianagarcia;
 import java.awt.Color;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.JColorChooser;
 
 public class Lab2P2_TatianaGarcia {
@@ -56,6 +57,8 @@ public class Lab2P2_TatianaGarcia {
                             default:
                                 throw new AssertionError();
                         }   
+                        //Collections.sort(lista);
+                        //Collections.checkedSortedSet(, type);
                     }
                     if (opcion2 ==2) {
                         String s=""; 
@@ -81,8 +84,14 @@ public class Lab2P2_TatianaGarcia {
                                 if(pos>=0 && pos<lista.size()){// & solo cuando es falso no evalua el resto, con && cuando es falso evalua el resto de condiciones
                                     if(lista.get(pos) instanceof Casa ){
                                         System.out.println(lista.get(pos)+"\n");
+                                        String es = ((Casa) lista.get(pos)).getEstado();
+                                        String du =((Casa) lista.get(pos)).getDueño();
+                                        
                                         lista.remove(pos);
                                         lista.add(CrearCasa());
+                                        
+                                        ((Casa) lista.get(lista.size())).setEstado(es);
+                                        ((Casa) lista.get(lista.size())).setDueño(du);
                                     }else{
                                         System.out.println( "La posicion entregada no es valida");
                                     }
@@ -94,8 +103,13 @@ public class Lab2P2_TatianaGarcia {
                                 if(pos>=0 && pos<lista.size()){// & solo cuando es falso no evalua el resto, con && cuando es falso evalua el resto de condiciones
                                     if(lista.get(pos) instanceof Edificio ){
                                         System.out.println(lista.get(pos)+"\n");
+                                        String es = ((Edificio) lista.get(pos)).getEstado();
+                                        String du =((Edificio) lista.get(pos)).getDueño();
                                         lista.remove(pos);
                                         lista.add(CrearEdificio());
+                                        
+                                        ((Edificio) lista.get(lista.size())).setEstado(es);
+                                        ((Edificio) lista.get(lista.size())).setDueño(du);
                                     }else{
                                         System.out.println( "La posicion entregada no es valida");
                                     }
@@ -235,7 +249,7 @@ public class Lab2P2_TatianaGarcia {
                             pos = leer.nextInt();
                             if(pos>=0 && pos<lista.size()){
                                 if(lista.get(pos) instanceof Casa ){
-                                    Casa c = new Casa();
+                                    
                                     System.out.println("A que estado desea modificar: \n"
                                             + "1. Lista\n"
                                             + "2. En Construccion\n"
