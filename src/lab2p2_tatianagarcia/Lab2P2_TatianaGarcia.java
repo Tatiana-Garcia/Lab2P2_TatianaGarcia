@@ -14,6 +14,7 @@ public class Lab2P2_TatianaGarcia {
         int opcion = 0; 
         ArrayList lista = new ArrayList();
         ArrayList<Usuario> users = new ArrayList();
+        String user ="", pass ="";
         
         
         while (opcion != 4) {   
@@ -178,7 +179,7 @@ public class Lab2P2_TatianaGarcia {
                                 pos = leer.nextInt();
                                 if(pos>=0 && pos<lista.size()){
                                     if(lista.get(pos) instanceof Casa ){
-                                        ((Casa) lista.get(pos)).setDueño(u.getUsuario());
+                                        ((Casa) lista.get(pos)).setDueño(user);
                                     }
                                     else{
                                         System.out.println( "La posicion entregada no es valida");
@@ -190,7 +191,7 @@ public class Lab2P2_TatianaGarcia {
                                 pos = leer.nextInt();
                                 if(pos>=0 && pos<lista.size()){
                                     if(lista.get(pos) instanceof Edificio ){
-                                        ((Edificio) lista.get(pos)).setDueño(u.getUsuario());
+                                        ((Edificio) lista.get(pos)).setDueño(user);
                                     }else{
                                         System.out.println( "La posicion entregada no es valida");
                                     }
@@ -201,7 +202,7 @@ public class Lab2P2_TatianaGarcia {
                                 pos = leer.nextInt();
                                 if(pos>=0 && pos<lista.size()){
                                     if(lista.get(pos) instanceof Solares ){
-                                        ((Solares) lista.get(pos)).setDueño(u.getUsuario());
+                                        ((Solares) lista.get(pos)).setDueño(user);
                                     }else{
                                         System.out.println( "La posicion entregada no es valida");
                                     }
@@ -216,84 +217,83 @@ public class Lab2P2_TatianaGarcia {
                     
             }//Fin de la opcion 1 menu principal
             if (opcion ==2) {
-                String s=""; 
-                for (Object t : lista) {
-                   s += "\nPosicion: "+lista.indexOf(t)+"\n"+t+"\n"; 
-                }
-                System.out.println(s);
-                int op = 3; 
-                int pos; 
-                while(op>2){
-                    System.out.println("Que estado desea modificar : \n"
-                            + "1. Casa\n"
-                            + "2. Edificio");
-                    op = leer.nextInt();
-                    if (op ==1) {
-                        System.out.println("Ingresa la posicion de la Casa que desea modificar: ");
-                        pos = leer.nextInt();
-                        if(pos>=0 && pos<lista.size()){
-                            if(lista.get(pos) instanceof Casa ){
-                                Casa c = new Casa();
-                                System.out.println("A que estado desea modificar: \n"
-                                        + "1. Lista\n"
-                                        + "2. En Construccion\n"
-                                        + "3. Construccion en Espera\n"
-                                        + "4. En Espera de Demolicion");
-                                int opc = leer.nextInt();
-                                if (opc ==1) {
-                                    ((Casa) lista.get(pos)).setEstado("Lista");
-                                }
-                                if(opc ==2){
-                                    ((Casa) lista.get(pos)).setEstado("En Construccion");
-                                }
-                                if(opc ==3){
-                                    ((Casa) lista.get(pos)).setEstado("Construccion en Espera");
-                                }
-                                if(opc ==4){
-                                    ((Casa) lista.get(pos)).setEstado("En Espera de Demolicion");
-                                }
-                            }
-                            else{
-                                System.out.println( "La posicion entregada no es valida");
-                            }
-                        } 
+                if(user.equals("admin")&pass.equals("admin1234")){
+                    String s=""; 
+                    for (Object t : lista) {
+                       s += "\nPosicion: "+lista.indexOf(t)+"\n"+t+"\n"; 
                     }
-                    if (op ==2) {
-                        System.out.println("Ingresa la posicion del Edificio que desea comprar: ");
-                        pos = leer.nextInt();
-                        if(pos>=0 && pos<lista.size()){
-                            if(lista.get(pos) instanceof Edificio ){
-                                
-                                Edificio e = new Edificio();
-                                System.out.println("A que estado desea modificar: \n"
-                                        + "1. Lista"
-                                        + "2. En Construccion"
-                                        + "3. Construccion en Espera"
-                                        + "4. En Espera de Demolicion");
-                                int opc = leer.nextInt();
-                                if (opc ==1) {
-                                    e.setEstado("Lista");
+                    System.out.println(s);
+                    int op = 3; 
+                    int pos; 
+                    while(op>2){
+                        System.out.println("Que estado desea modificar : \n"
+                                + "1. Casa\n"
+                                + "2. Edificio");
+                        op = leer.nextInt();
+                        if (op ==1) {
+                            System.out.println("Ingresa la posicion de la Casa que desea modificar: ");
+                            pos = leer.nextInt();
+                            if(pos>=0 && pos<lista.size()){
+                                if(lista.get(pos) instanceof Casa ){
+                                    Casa c = new Casa();
+                                    System.out.println("A que estado desea modificar: \n"
+                                            + "1. Lista\n"
+                                            + "2. En Construccion\n"
+                                            + "3. Construccion en Espera\n"
+                                            + "4. En Espera de Demolicion");
+                                    int opc = leer.nextInt();
+                                    if (opc ==1) {
+                                        ((Casa) lista.get(pos)).setEstado("Lista");
+                                    }
+                                    if(opc ==2){
+                                        ((Casa) lista.get(pos)).setEstado("En Construccion");
+                                    }
+                                    if(opc ==3){
+                                        ((Casa) lista.get(pos)).setEstado("Construccion en Espera");
+                                    }
+                                    if(opc ==4){
+                                        ((Casa) lista.get(pos)).setEstado("En Espera de Demolicion");
+                                    }
                                 }
-                                if(opc ==2){
-                                    e.setEstado("En Construccion");
+                                else{
+                                    System.out.println( "La posicion entregada no es valida");
                                 }
-                                if(opc ==3){
-                                    e.setEstado("Construccion en Espera");
-                                }
-                                if(opc ==4){
-                                    e.setEstado("En Espera de Demolicion");
-                                }
-                                
-                            }else{
-                                System.out.println( "La posicion entregada no es valida");
-                            }
-                        } 
-                    }
-                }
-                
-                
-                
+                            } 
+                        }
+                        if (op ==2) {
+                            System.out.println("Ingresa la posicion del Edificio que desea comprar: ");
+                            pos = leer.nextInt();
+                            if(pos>=0 && pos<lista.size()){
+                                if(lista.get(pos) instanceof Edificio ){
 
+                                    Edificio e = new Edificio();
+                                    System.out.println("A que estado desea modificar: \n"
+                                            + "1. Lista"
+                                            + "2. En Construccion"
+                                            + "3. Construccion en Espera"
+                                            + "4. En Espera de Demolicion");
+                                    int opc = leer.nextInt();
+                                    if (opc ==1) {
+                                        e.setEstado("Lista");
+                                    }
+                                    if(opc ==2){
+                                        e.setEstado("En Construccion");
+                                    }
+                                    if(opc ==3){
+                                        e.setEstado("Construccion en Espera");
+                                    }
+                                    if(opc ==4){
+                                        e.setEstado("En Espera de Demolicion");
+                                    }
+
+                                }else{
+                                    System.out.println( "La posicion entregada no es valida");
+                                }
+                            } 
+                        }
+                    }
+                }
+                
             }
             if (opcion == 3) {
                 
@@ -308,16 +308,16 @@ public class Lab2P2_TatianaGarcia {
                     }
                     if (op ==2) {
                         System.out.println("Ingrese su usuario: ");
-                        String user; 
-                        user = leer.next();
+                        String user2; 
+                        user2 = leer.next();
                         System.out.println("Ingrese su contraseña: ");
                         String contra; 
                         contra = leer.next(); 
                         
                         for (Usuario t : users) {
-                            if(t.getUsuario().equals(user)&&t.getPassword().equals(contra)){
-                                t.setUsuario(user);
-                                t.setPassword(contra);
+                            if(t.getUsuario().equals(user2)&&t.getPassword().equals(contra)){
+                                user = t.getUsuario();
+                                pass = t.getPassword();
                                 System.out.println("Inicio de secion exitosa");
                                 
                             }
