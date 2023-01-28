@@ -233,12 +233,25 @@ public class Lab2P2_TatianaGarcia {
                         pos = leer.nextInt();
                         if(pos>=0 && pos<lista.size()){
                             if(lista.get(pos) instanceof Casa ){
+                                Casa c = new Casa();
                                 System.out.println("A que estado desea modificar: \n"
                                         + "1. Lista"
-                                        + "2. En COnstruccion"
+                                        + "2. En Construccion"
                                         + "3. Construccion en Espera"
                                         + "4. En Espera de Demolicion");
-                                //((Casa) lista.get(pos)).setDueño(u.getUsuario());
+                                int opc = leer.nextInt();
+                                if (opc ==1) {
+                                    c.setEstado("Lista");
+                                }
+                                if(opc ==2){
+                                    c.setEstado("En Construccion");
+                                }
+                                if(opc ==3){
+                                    c.setEstado("Construccion en Espera");
+                                }
+                                if(opc ==4){
+                                    c.setEstado("En Espera de Demolicion");
+                                }
                             }
                             else{
                                 System.out.println( "La posicion entregada no es valida");
@@ -250,7 +263,27 @@ public class Lab2P2_TatianaGarcia {
                         pos = leer.nextInt();
                         if(pos>=0 && pos<lista.size()){
                             if(lista.get(pos) instanceof Edificio ){
-                                //((Edificio) lista.get(pos)).setDueño(u.getUsuario());
+                                
+                                Edificio e = new Edificio();
+                                System.out.println("A que estado desea modificar: \n"
+                                        + "1. Lista"
+                                        + "2. En Construccion"
+                                        + "3. Construccion en Espera"
+                                        + "4. En Espera de Demolicion");
+                                int opc = leer.nextInt();
+                                if (opc ==1) {
+                                    e.setEstado("Lista");
+                                }
+                                if(opc ==2){
+                                    e.setEstado("En Construccion");
+                                }
+                                if(opc ==3){
+                                    e.setEstado("Construccion en Espera");
+                                }
+                                if(opc ==4){
+                                    e.setEstado("En Espera de Demolicion");
+                                }
+                                
                             }else{
                                 System.out.println( "La posicion entregada no es valida");
                             }

@@ -106,7 +106,18 @@ public class Casa {
     public void setDueño(String dueño) {
         this.dueño = dueño;
     }
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    public String[] getEstados() {
+        return estados;
+    }
     
+    @Override
     public String toString(){
         return "Casa: \nNumero de Casa: "+num_casa
                 +"\nNumero de Bloque: "+num_bloque
@@ -117,4 +128,6 @@ public class Casa {
                 +"\nNumero de Cuartos: "+ num_cuartos
                 +"\n Estado: "+estado;
     }
+    
+    
 }

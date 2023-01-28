@@ -54,6 +54,13 @@ public class Edificio {
     public void setDueño(String dueño) {
         this.dueño = dueño;
     }
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
     @Override
     public String toString() {
